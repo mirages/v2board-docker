@@ -3,12 +3,12 @@ services:
   www:
     image: tokumeikoi/lcrp
     volumes:
-      - '/app/v2board/www:/www'
-      - '/app/v2board/wwwlogs:/wwwlogs'
-      - '/app/v2board/caddy.conf:/run/caddy/caddy.conf'
-      - '/app/v2board/supervisord.conf:/run/supervisor/supervisord.conf'
-      - '/app/v2board/crontabs.conf:/etc/crontabs/root'
-      - '/app/v2board/.caddy:/root/.caddy'
+      - './www:/www'
+      - './wwwlogs:/wwwlogs'
+      - './caddy.conf:/run/caddy/caddy.conf'
+      - './supervisord.conf:/run/supervisor/supervisord.conf'
+      - './crontabs.conf:/etc/crontabs/root'
+      - './.caddy:/root/.caddy'
 #    ports:
 #      - '80:80'
 #      - '443:443'
