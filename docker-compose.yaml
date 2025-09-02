@@ -15,9 +15,6 @@ services:
     restart: always
     networks:
       - dokploy-network
-    build:
-      args:
-        - UPDATE_SUBMODULES=true
   mysql:
     image: mysql:5.7.29
     volumes:
