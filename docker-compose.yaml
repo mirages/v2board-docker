@@ -12,11 +12,12 @@ services:
 #    ports:
 #      - '80:80'
 #      - '443:443'
-    expose:
-      - 3000
     restart: always
     networks:
       - dokploy-network
+    build:
+      args:
+        - UPDATE_SUBMODULES=true
   mysql:
     image: mysql:5.7.29
     volumes:
