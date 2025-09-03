@@ -15,6 +15,7 @@ services:
     restart: always
     networks:
       - dokploy-network
+
   mysql:
     image: mysql:5.7.29
     volumes:
@@ -25,6 +26,17 @@ services:
       MYSQL_DATABASE: v2board
     networks:
       - dokploy-network
+
+  redis:
+    image: redis:6.2-alpine
+    restart: always
+    volumes:
+      - './redis-data:/data'
+    networks:
+      - dokploy-network
+    environment:
+      - REDIS_PASSWORD=v2boardredis
+
 networks:
   dokploy-network:
     external: true
