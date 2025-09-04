@@ -28,13 +28,13 @@ services:
     networks:
       - v2board-network
 
-  redis:
-    image: redis:7.0-alpine
-    restart: always
-    volumes:
-      - './redis-data:/data'
-    networks:
-      - v2board-network
+#  redis:
+#    image: redis:7.0-alpine
+#    restart: always
+#    volumes:
+#      - './redis-data:/data'
+#    networks:
+#      - v2board-network
 
 networks:
   dokploy-network:
